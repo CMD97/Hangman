@@ -97,4 +97,3 @@ def play_again():
 if __name__ == '__main__':
     word_list = ['apple', 'banana', 'orange', 'pear', 'strawberry', 'watermelon', 'coconut', 'melon', 'dragonfruit']
     play_game(word_list)
-# %%
