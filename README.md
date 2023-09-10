@@ -16,7 +16,7 @@ In Hangman the word has to be chosen at random, to do this I used the in-built r
 Hangman also allows the user to input a letter to be able to start guessing the word, I used the in-built input() function to be able to prompt the user to enter a letter by stating `input("Enter a letter: ").lower`. THe addition of the .lower ensured that if the user entered an uppercase letter, it would be returned as a lowercase, as my word list is in lowercase, and python would define an uppercase letter differently to a lowercase letter.
 
 The input function needed to have conditionals so the user wouldn't be able to type anything for their input. I utilised an if/elif/else statement to ensure they had a good experience, with prompts to try again if they entered something incorrect. This was all inputted into an ask_letter method within the Hangman class, inside a loop until the letter passed through to the else statement:
-    
+
     alphabet = set(string.ascii_lowercase)
         while True:
             letter = input('Enter a letter: ').lower()
