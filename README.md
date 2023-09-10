@@ -1,7 +1,9 @@
 # Hangman Project for AICore
+
 The Hangman Project created was using Python3 & VSCode, this is the initial project I have created to begin understanding the use of several Python basics, inclusive of classes, functions, loops, sets, lists, booleans & user inputs. The hangman game can be accessed via the command line by accessing the folder and inputting `python hangman.py`. The game was created by following the milestones as detailed below.
 
 ## Milestone 1: Setting up the environment.
+
 I began by understanding how to set up the environment by installing miniconda & pip and creating the environment that will launch upon opening the hangman.py file inside VSCode.
 
 The next step was to be able to understand how git commands, and begin using the commands within the command line to be able to clone github files, be able to stage, commit & push changes as well as linking a repository to a folder that contains the local files.
@@ -36,6 +38,7 @@ The input function needed to have conditionals so the user wouldn't be able to t
 len() was used to ensure the user only entered 1 letter, if the letter was not within the English language, a message stating it wasn't would be printed, if the letter had been tried a message would be printed, then if they entered a valid letter they haven't used, it would go toward the check_letter function. 
 
 ## Milestone 3: First steps in the check_letter method.
+
 After the letter is passed through the if/elif/else statement provided in Milestone 2, it moves onto the next method to be able to check if the letter is in the word. This was done by creating another if/else statement, if the letter is in the word the code will print: `print(f'You are correct! You still have {self.num_lives} lives left.')` and if it is not in the word it will print: `print(f'Incorrect! You now have {self.num_lives} lives.') `.
 
 ## Milestone 4: Class creation & further check_letter method requirements.
@@ -75,6 +78,7 @@ To continue from the if statement started above, an else block was created in ca
  This deducted from the lives of 6 that I used for the game, this will determine if the user has lost the game.
  
 ## Milestone 5: Putting the methods to use within the play_game function.
+
 The final step was to create the `play_game()` function, which would then be called upon to be able to run through the class 'Hangman':
     
     def play_game(word_list):
@@ -94,7 +98,8 @@ The final step was to create the `play_game()` function, which would then be cal
             game.ask_letter()
 The while loop was created within the play_game function to call upon the ask_letter method within the class as long as the number of unique letters wasn't equal to zero (insinuating the user has won) and the number of lives wasn't equal to zero (insinuating the user has lost), if the if or elif statements were brought into control, the game ended with the specific print statements above.
 
-## Milestone 6: Additional details added.
+## Milestone 6: Additional details added
+
 To take the game further, the visual of hangman was added by a separate file, called `lives.py` within the file was a dicttionary which printed the visual allocated to the key called `lives_visual_dict`. This was imported at the beginning of the file by line 4: `from lives import lives_visual_dict` and was called upon in the check_letter method after both the letters were correct, or the letters were incorrect so that there was a better user experience.
 
 Finally, I created a function that asked the user if they wanted to play again, so the user didn't have to restart the code at the end. This was an additional detail outside of the project that I thought would complete the user experience & give them a reason to stay for another game and is coded into the play_game function underneath the if/elif statements.
@@ -119,6 +124,7 @@ Finally, I created a function that asked the user if they wanted to play again, 
 As shown, it has a while loop with an if/elif/else statement to ensure the conditionals are met if the user inputs anything other than Y or N and the input is taken to .upper() so that if the user inputs a lowercase y or n the code will take that into an uppercase letter and not throw an error toward them. The function will then circle back round to the initial play_game function if they select Y, or end the code if they select N. Any other character returns an invalid selection and will ask them to choose either Y or N once again.
 
 ## Conclusion
+
 Throughout this project, I have successfully understood the basics of Python & fortified the more complex parts by creating a final function as an addition to the project that wasn't necessary, the play_again function, which is inclusive of a while loop, and also an if/elif/else statement. 
 What I did find to be a struggle was understanding the enuemrate function, which I will be going over to be able to understand more and have been doing so since gaining the basics of how it works within the for loop.
 
