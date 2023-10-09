@@ -2,7 +2,7 @@
 
 The Hangman Project created was using Python3 & VSCode, this is the initial project I have created to begin understanding the use of several Python basics, inclusive of classes, functions, loops, sets, lists, booleans & user inputs. The hangman game can be accessed via the command line by accessing the folder and inputting `python hangman.py`. The game was created by following the milestones as detailed below.
 
-## Milestone 1: Setting up the environment.
+## Milestone 1: Setting up the environment
 
 I began by understanding how to set up the environment by installing miniconda & pip and creating the environment that will launch upon opening the hangman.py file inside VSCode.
 
@@ -35,13 +35,13 @@ The input function needed to have conditionals so the user wouldn't be able to t
                 self.list_letters.append(letter)
                 self.check_letter(letter)
                 break
-len() was used to ensure the user only entered 1 letter, if the letter was not within the English language, a message stating it wasn't would be printed, if the letter had been tried a message would be printed, then if they entered a valid letter they haven't used, it would go toward the check_letter function. 
+len() was used to ensure the user only entered 1 letter, if the letter was not within the English language, a message stating it wasn't would be printed, if the letter had been tried a message would be printed, then if they entered a valid letter they haven't used, it would go toward the check_letter function.
 
-## Milestone 3: First steps in the check_letter method.
+## Milestone 3: First steps in the check_letter method
 
-After the letter is passed through the if/elif/else statement provided in Milestone 2, it moves onto the next method to be able to check if the letter is in the word. This was done by creating another if/else statement, if the letter is in the word the code will print: `print(f'You are correct! You still have {self.num_lives} lives left.')` and if it is not in the word it will print: `print(f'Incorrect! You now have {self.num_lives} lives.') `.
+After the letter is passed through the if/elif/else statement provided in Milestone 2, it moves onto the next method to be able to check if the letter is in the word. This was done by creating another if/else statement, if the letter is in the word the code will print: `print(f'You are correct! You still have {self.num_lives} lives left.')` and if it is not in the word it will print: `print(f'Incorrect! You now have {self.num_lives} lives.')`.
 
-## Milestone 4: Class creation & further check_letter method requirements.
+## Milestone 4: Class creation & further check_letter method requirements
 
 A class was created named 'Hangman' which included the method ask_letter() and check_letter(), as well as the magic method of \_\_init\_\_ which was learnt to be able to initialise upon running the code noted below:
 
@@ -67,7 +67,7 @@ Next was to complete the check_letter() method to be able to ensure that when th
             for number, placeholder in enumerate(self.word):
                 if letter == placeholder:
                     self.word_guessed_list[number] = placeholder
-This function used a boolean to see if the letter was in the word, and if it was it would replace the blank space with the letter at the correct position e.g. if 'a' was inputted, the blank spaces would turn from "\_ \_ \_ \_ \_" to "a \_ \_ \_ \_". 
+This function used a boolean to see if the letter was in the word, and if it was it would replace the blank space with the letter at the correct position e.g. if 'a' was inputted, the blank spaces would turn from "\_ \_ \_ \_ \_" to "a \_ \_ \_ \_".
 
 As per the if statement, once the letter has passed the check that it is in the word, it will also reduce the number of unique numbers by 1, this variable was created in the \_\_init\_\_ method and is the main attribute to determine if the game is won.
 
@@ -76,11 +76,11 @@ To continue from the if statement started above, an else block was created in ca
     else:
             self.num_lives -= 1
  This deducted from the lives of 6 that I used for the game, this will determine if the user has lost the game.
- 
-## Milestone 5: Putting the methods to use within the play_game function.
+
+## Milestone 5: Putting the methods to use within the play_game function
 
 The final step was to create the `play_game()` function, which would then be called upon to be able to run through the class 'Hangman':
-    
+
     def play_game(word_list):
     game = Hangman(word_list, num_lives=6)
     while True:
@@ -104,7 +104,7 @@ To take the game further, the visual of hangman was added by a separate file, ca
 
 Finally, I created a function that asked the user if they wanted to play again, so the user didn't have to restart the code at the end. This was an additional detail outside of the project that I thought would complete the user experience & give them a reason to stay for another game and is coded into the play_game function underneath the if/elif statements.
 
-    ef play_again():
+    def play_again():
     while True:
         ask_user_to_play_again = input('Play again? Input Y or N: ').upper()
         if ask_user_to_play_again == 'Y':
@@ -125,7 +125,7 @@ As shown, it has a while loop with an if/elif/else statement to ensure the condi
 
 ## Conclusion
 
-Throughout this project, I have successfully understood the basics of Python & fortified the more complex parts by creating a final function as an addition to the project that wasn't necessary, the play_again function, which is inclusive of a while loop, and also an if/elif/else statement. 
+Throughout this project, I have successfully understood the basics of Python & fortified the more complex parts by creating a final function as an addition to the project that wasn't necessary, the play_again function, which is inclusive of a while loop, and also an if/elif/else statement.
 What I did find to be a struggle was understanding the enuemrate function, which I will be going over to be able to understand more and have been doing so since gaining the basics of how it works within the for loop.
 
 The next things I'd add to improve my version of hangman is to create a difficulty setting, however I didn't implement this in it's current state due to it being subjective; is the difficulty the amount of letters, unique letters or number of lives given. I am confident with a bit of time I would be able to code this in at a later date.
